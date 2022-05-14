@@ -17,7 +17,7 @@ This is the project for the GoGreen competition
 ├─ README.md  
 ├─ LICENSE  
 ├─ Material  
-    ├─Vedio  
+├──Vedio  
     ├─Picture  
     ├─Document  
     
