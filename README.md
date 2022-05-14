@@ -7,9 +7,9 @@ Now this respository has a mirror on [github](https://github.com/zhengrui2008021
 
 ### **Branch:** Duan-JunHan
 
-├─ Pysolar-master(A package)
+├─ Pysolar-master (A package)
 
-├─ Sun_position.py(A module to calculate sun's position)
+├─ Sun_position.py (A module to calculate sun's position)
 
 └─ README.md
 
