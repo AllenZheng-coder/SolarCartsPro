@@ -14,10 +14,10 @@ This is the project for the GoGreen competition
 ## The structure of this project is going to include: 
 
 ### **Branch:** Master
-├─ README.md
-├─ LICENSE
-├─ Material
-    ├─Vedio
-    ├─Picture
-    ├─Document
+├─ README.md  
+├─ LICENSE  
+├─ Material  
+    ├─Vedio  
+    ├─Picture  
+    ├─Document  
     
