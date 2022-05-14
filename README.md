@@ -11,13 +11,20 @@ This is the project for the GoGreen competition
 
 └─ README.md
 
-## The structure of this project is going to include: 
-
 ### **Branch:** Master
-├─ README.md  
-├─ LICENSE  
-├─ Material  
-├──Vedio  
-    ├─Picture  
-    ├─Document  
+
+├─ README.md
+
+├─ LICENSE  (Open-Source license)
+
+├─ Material 
+
+├─ video  
+
+│&emsp;&emsp;├─ Picture  
     
+│&emsp;&emsp;└─ Document  
+
+└─ Note
+
+&emsp;&emsp;└─ Image    
