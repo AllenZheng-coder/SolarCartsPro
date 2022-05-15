@@ -14,7 +14,7 @@ Now this respository has a mirror on [github](https://github.com/zhengrui2008021
 
 ├─ Sun_position.py (A module to calculate sun's position)
 
-├─ DHT11.py (A module to get DHT11's)
+├─ Hardware_module (A folder for hardware-control-module)
 
 └─ README.md
 
