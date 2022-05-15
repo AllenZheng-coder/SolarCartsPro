@@ -8,7 +8,7 @@ A module to calculate sun's altitude_angle and azimuth_angle
   
 It uses a package - [Pysolar](https://github.com/pingswept/pysolar/)
 
-## 2.**Pysolar-master**
+## 2.**pysolar**
 
 You can input these command in the cmd to install this package
 
