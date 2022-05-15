@@ -17,3 +17,9 @@ You can input these command in the cmd to install this package
     pip setup.py install
 
 You **must** install this to make this module run perfectly
+
+## 3.Hardware_module/DHT11.py
+
+A module to get DHT11's data
+
+This module is **unverify** on raspberry
