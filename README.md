@@ -1,4 +1,4 @@
-This is Martin8521's branch
+This is Duan-JunHan's branch
 
 # Now the branch includes:
 
@@ -18,8 +18,14 @@ You can input these command in the cmd to install this package
 
 You **must** install this to make this module run perfectly
 
-## 3.Hardware_module/DHT11.py
+## 3.Hardware_module/read_temperture_humidity_data.py
 
 A module to get DHT11's data
 
-This module is **unverify** on raspberry
+* This module is **unverify** on raspberry
+
+## 4.Hardware_module/servo_control.py
+
+A module to control servo TD7015MG
+
+* This module is **unverify** on raspberry

@@ -4,14 +4,14 @@ import time as t
 
 GPIO.setmode(GPIO.BCM)  # 引脚设置为物理引脚模式
 
-def read_DHT11_data(DHT11_pin):
+def read_temperture_humidity_data(DHT11_pin):
     '''
     This is a module to get DHT11's data
     Input DHT11.data pin's number(In BCM mode)
-    Then it'll return two float - humidity and temperature
+    Then it'll return a dictionary - {humidity,temperature}
     If the data has broken it'll return -1
     This module is unverify on raspberry
-    By Martin8521 
+    By Duan-JunHan
     '''
     GPIO.setup(DHT11_pin, GPIO.OUT)   # 引脚设置为输出模式
     GPIO.output(DHT11_pin,GPIO.LOW)  
@@ -54,7 +54,8 @@ def read_DHT11_data(DHT11_pin):
     check_code = m.dot(data_arry[32:40])        # 计算校验码
 
     if (humidity + humidity_float + temperature + temperature_float) == check_code:
-        return (humidity + humidity_float * (10 ** (-(len(str(humidity_float)))))),(temperature + temperature_float * (10 ** (-(len(str(temperature_float))))))
+        return_dic = {'humidity':(humidity + humidity_float * (10 ** (-(len(str(humidity_float)))))),'temperature':(temperature + temperature_float * (10 ** (-(len(str(temperature_float))))))}
+        return return_dic
         # 检查校验码，正确则输出
     else:
         return -1 # 否则输出-1
