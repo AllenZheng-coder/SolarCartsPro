@@ -27,3 +27,4 @@ setup(name='pysolar',
     package_data = {"pysolar": ["*.pyi"]},  # *.py is included in any case
     requires = ['numpy'],
     )
+

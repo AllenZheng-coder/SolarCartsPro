@@ -21,3 +21,5 @@ def sun_position(latitude,longitude,time_zone):
     azimuth_angle = psl.solar.get_azimuth(latitude, longitude, date)
     return_dic = {'altitude_angle':altitude_angle,'azimuth_angle':azimuth_angle}
     return return_dic
+
+print(sun_position(38, 118, 8))
