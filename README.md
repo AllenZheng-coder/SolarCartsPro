@@ -14,7 +14,7 @@ You can input these command in the cmd to install this package
 
     cd pysolar-master
     
-    pip setup.py install
+    python setup.py install
 
 You **must** install this to make this module run perfectly
 
