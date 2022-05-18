@@ -12,9 +12,9 @@ It uses a package - [Pysolar](https://github.com/pingswept/pysolar/)
 
 You can input these command in the cmd to install this package
 
-    cd pysolar-master
+    cd pysolar
     
-    pip setup.py install
+    python setup.py install
 
 You **must** install this to make this module run perfectly
 
@@ -29,3 +29,9 @@ A module to get DHT11's data
 A module to control servo TD7015MG
 
 * This module is **unverify** on raspberry
+
+## 5.Sun_position.ggb
+
+This is a 3D model to help people understand how to describle sun's position
+
+You can open this file on [Geogebra 3D calculater](https://www.geogebra.org/3d) or click this [link](https://www.geogebra.org/3d/ftnemdzx)
