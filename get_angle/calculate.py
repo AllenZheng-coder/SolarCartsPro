@@ -33,7 +33,7 @@ def main():
             angle = sun_position(latitude,longitude,time_zone)
             print("altitude angle: ",angle["altitude_angle"] )
             print("azimuth angle: ",angle["azimuth_angle"] )
-            break
+            return 0
         elif flag == "N" or flag == "n":
             while True:
                 latitude = input("Please input your latitude ->")
@@ -47,7 +47,7 @@ def main():
 
             print("altitude angle: ",angle["altitude_angle"] )
             print("azimuth angle: ",angle["azimuth_angle"] )
-            break
+            return 1
         else:
             print("We don't have this choice! Please enter again!")
         print("Setting successfully!")
