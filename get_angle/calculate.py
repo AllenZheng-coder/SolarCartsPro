@@ -22,35 +22,6 @@ def sun_position(latitude,longitude,time_zone):
     return_dic = {'altitude_angle':altitude_angle,'azimuth_angle':azimuth_angle}
     return return_dic
 
-def main():
-    print("Auto following System Settings: ")
-    while True:
-        flag = input("Do you want to use the default setting[Y/N] ->")
-        if flag == "Y" or flag == "y":
-            latitude = get_information.get_position()["latitude"]
-            longitude = get_information.get_position()["longitude"]
-            time_zone = get_information.get_timezone()
-            angle = sun_position(latitude,longitude,time_zone)
-            print("altitude angle: ",angle["altitude_angle"] )
-            print("azimuth angle: ",angle["azimuth_angle"] )
-            return 0
-        elif flag == "N" or flag == "n":
-            while True:
-                latitude = input("Please input your latitude ->")
-                longitude = input("Please input your longitude ->")
-                time_zone = input("Please input your timezone ->")
-                try:
-                    angle = sun_position(latitude,longitude,time_zone)
-                    break
-                except:
-                    print("Someting went wrong! Please try again!")
-
-            print("altitude angle: ",angle["altitude_angle"] )
-            print("azimuth angle: ",angle["azimuth_angle"] )
-            return 1
-        else:
-            print("We don't have this choice! Please enter again!")
-        print("Setting successfully!")
 
 if __name__ == "__main__":
     main()
