@@ -13,7 +13,7 @@ app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(hours=5)
 
 
 @ app.route("/")
-def agent_show():
+def main():
     user_agent = request.headers.get("User-Agent")
     is_mobile = function.judge_pc_or_mobile(user_agent)
     session["mobile"] = is_mobile
@@ -22,6 +22,10 @@ def agent_show():
         return render_template("indexm.html")
     else:
         return render_template("indexm.html")
+
+@app.route("/test")
+def test():
+    return render_template("test.html")
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port="8080")
