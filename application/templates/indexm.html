@@ -1,13 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=320px, initial-scale=1.0">
     <title>index</title>
     <link rel="stylesheet" type="text/css" href="../static/indexm.css">
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.6.0/css/bootstrap.min.css"> -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    Hello
+    <div class="main">
+        <!-- <div class="padpart"> -->
+        <h1>保定第十七中学气象站</h1>
+        <h3>Weather station of Baoding NO17 middle school</h3>
+        <!-- </div> -->
+    </div>
+    <div style="width: 100%; height: 10x"></div>
+    
+    <div class="main">
+        <table style="width: 100%; border-color: rgba(255, 255, 255, 0);">
+            <tr>
+                <td class="buttons">
+                    <form action="/settings">
+                        <button class="button" style="background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);">基本设置</button>
+                    </form>
+                </td>
+                <td class="blocks"></td>
+                <td class="buttons">
+                    <form action="/history">
+                        <button class="button" style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">历史数据</button>
+                    </form>
+                </td>
+                <td class="blocks"></td>
+                <td class="buttons">
+                    <form action="/future">
+                        <button class="button" style="background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);">天气预报</button>
+                    </form>
+                </td>
+                <td class="blocks"></td>
+                <td class="buttons">
+                    <form action="/user">
+                        <button class="button" style="background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);">用户中心</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="main">
+        <h2>地理信息</h2>
+        <p>日期：{{date}}</p>
+        <p>位置：{{location}}</p>
+        <p>IP：{{ip}}</p>
+    </div>
+    <div class="main">
+        <h2>天气情况：{{weather}}</h2>
+        <p>当前温度：{{temperature}}</p>
+        <iframe src="temperature.html" frameborder="0"></iframe>
+        <p>当前湿度：{{humidity}}</p>
+        <iframe src="humidity.html" frameborder="0"></iframe>
+        <p>当前紫外线强度：{{uv}}</p>
+        <iframe src="uv.html" frameborder="0"></iframe>
+        <p>当前降水：{{rain}}</p>
+        <iframe src="rain.html" frameborder="0"></iframe>
+    </div>
+
 </body>
+
 </html>

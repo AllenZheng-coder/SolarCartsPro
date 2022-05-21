@@ -21,7 +21,7 @@ def agent_show():
     if session["mobile"]:
         return render_template("indexm.html")
     else:
-        return render_template("index.html")
+        return render_template("indexm.html")
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port="8080")
