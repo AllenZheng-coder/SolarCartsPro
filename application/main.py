@@ -23,9 +23,12 @@ def main():
     else:
         return render_template("indexm.html")
 
-@app.route("/test")
-def test():
-    return render_template("test.html")
+@app.route("/charts/<content>")
+def shows(content):
+    try:
+        return render_template("{}.html".format(content))
+    except:
+        return "404"
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port="8080")

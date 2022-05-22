@@ -25,13 +25,17 @@ def login(username):
         return -1
 
 def write_in_weather(temperature, humidity, ultraviolet, precipitation, wind_speed,wind_direction,now_time):
-    conn = pymysql.connect(host="localhost", port=3306, user="root", password="GoGreen@bd17z", database="gogreen", charset="utf-8")
-    cur = conn.cursor()
-    sql = """
-    insert into meteorology (temperature, humidity, ultraviolet, precipitation, wind_speed,wind_direction,now_time) values ("{}","{}","{}","{}","{}","{}","{}")
-    """.format(temperature, humidity, ultraviolet, precipitation, wind_speed,wind_direction,now_time)
-    cur.execute(sql)
-    conn.commit()
+    try:
+        conn = pymysql.connect(host="localhost", port=3306, user="root", password="GoGreen@bd17z", database="gogreen", charset="utf-8")
+        cur = conn.cursor()
+        sql = """
+        insert into meteorology (temperature, humidity, ultraviolet, precipitation, wind_speed,wind_direction,now_time) values ("{}","{}","{}","{}","{}","{}","{}")
+        """.format(temperature, humidity, ultraviolet, precipitation, wind_speed,wind_direction,now_time)
+        cur.execute(sql)
+        conn.commit()
+        return 0
+    except:
+        return -1
 
 def read_weather(now_time):
     try:
@@ -45,6 +49,11 @@ def read_weather(now_time):
     except:
         return -1
 
-# def setmod():
-    
-        
+def read_setting(times, background, chart_kind, chart_color, bar_dir):
+    conn = pymysql.connect(host="localhost", port=3306, user="root", password="GoGreen@bd17z", database="gogreen", charset="utf-8")
+    cur = conn.cursor()
+    sql = """
+    insert into settings (temperature, humidity, ultraviolet, precipitation, wind_speed,wind_direction,now_time) values ("{}","{}","{}","{}","{}")
+    """.format(times, background, chart_kind, chart_color, bar_dir)
+    cur.execute(sql)
+    conn.commit()

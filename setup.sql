@@ -1,4 +1,5 @@
 SHOW DATABASES;
+DROP DATABASE gogreen;
 CREATE DATABASE gogreen;
 CREATE TABLE user_info
 (
@@ -15,12 +16,17 @@ CREATE TABLE meteorology
     precipitation float,
     wind_speed int,
     wind_direction int,
+    pressure float,
     now_time datetime
-)
+);
 CREATE TABLE settings
 (
-    runmod int,
+    times int,
     background text,
-    chart text
-    
-)
+    chart_kind text,
+    chart_color text,
+    bar_dir text,
+    ip text,
+    latitude float,
+    longitude float 
+);

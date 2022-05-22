@@ -60,24 +60,29 @@
     </div>
     <div class="main">
         <h2>天气情况：{{weather}}</h2>
-        <p>当前温度：{{temperature}}</p>
         
         {% if flag == 1%}
-        <iframe src="/test" frameborder="0"></iframe>
+        <p>当前温度：{{temperature}}</p>
+        <iframe src="/charts/temperature" frameborder="0"></iframe>
         <p>当前湿度：{{humidity}}</p>
-        <iframe src="humidity.html" frameborder="0"></iframe>
+        <iframe src="/charts/humidity" frameborder="0"></iframe>
         <p>当前紫外线强度：{{uv}}</p>
-        <iframe src="uv.html" frameborder="0"></iframe>
+        <iframe src="/charts/uv" frameborder="0"></iframe>
         <p>当前降水：{{rain}}</p>
-        <iframe src="rain.html" frameborder="0"  ></iframe>
+        <iframe src="/charts/rain" frameborder="0"  ></iframe>
+        <p>当前大气压强：{{pressure}}</p>
+        <iframe src="/charts/pressure" frameborder="0"  ></iframe>
         {% else %}
-        <iframe src="/test" frameborder="0"></iframe>
+        <p>当前温度：{{temperature}}</p>
+        <iframe src="/charts/temperature1" frameborder="0"></iframe>
         <p>当前湿度：{{humidity}}</p>
-        <iframe src="humidity1.html" frameborder="0"></iframe>
+        <iframe src="/charts/humidity1" frameborder="0"></iframe>
         <p>当前紫外线强度：{{uv}}</p>
-        <iframe src="uv1.html" frameborder="0"></iframe>
+        <iframe src="/charts/uv1" frameborder="0"></iframe>
         <p>当前降水：{{rain}}</p>
-        <iframe src="rain1.html" frameborder="0"></iframe>
+        <iframe src="/charts/rain1" frameborder="0"  ></iframe>
+        <p>当前大气压强：{{pressure}}</p>
+        <iframe src="/charts/pressure1" frameborder="0"  ></iframe>
         {% endif %}
     </div>
 
