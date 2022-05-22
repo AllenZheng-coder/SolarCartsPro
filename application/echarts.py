@@ -1,4 +1,4 @@
-from turtle import width
+import function
 from pyecharts.charts import Bar
 from pyecharts.charts import Line
 from pyecharts.charts import Pie
