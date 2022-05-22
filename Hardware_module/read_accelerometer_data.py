@@ -44,4 +44,3 @@ def read_accelerometer_data(Address):
 
     return_dic = {"gyroX":gyroX,"gyroY":gyroY,"gyroZ":gyroZ,"AccelX":accelX,"AccelY":accelY,"AccelZ":accelZ,"AngleX":angleX,"AngleY":angleY}
     return return_dic
-
