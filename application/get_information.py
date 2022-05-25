@@ -10,7 +10,7 @@ def get_position():
 
     print("IP:", ip)
 
-    reader = geoip2.database.Reader("get_angle\geoip2_database\GeoLite2-City.mmdb")
+    reader = geoip2.database.Reader("application\geoip2_database\GeoLite2-City.mmdb")
     data = reader.city(ip)
     latitude = data.location.latitude
     longitude = data.location.longitude

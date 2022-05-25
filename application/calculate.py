@@ -2,6 +2,7 @@ import math as m
 import datetime as dt
 import pysolar as psl
 import get_information
+import eel
 
 def sun_position(latitude,longitude,time_zone):
     """
@@ -22,6 +23,6 @@ def sun_position(latitude,longitude,time_zone):
     return_dic = {'altitude_angle':altitude_angle,'azimuth_angle':azimuth_angle}
     return return_dic
 
-
-if __name__ == "__main__":
-    main()
+def main():
+    position = get_information.get_position()
+    return sun_position(position["latitude"], position["longitude"], get_information.get_timezone())

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=320px, initial-scale=1.0">
     <title>index</title>
     <link rel="stylesheet" type="text/css" href="../static/indexm.css">
-    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.6.0/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.statishishihshi dhcfile.org/twitter-bootstrap/4.6.0/css/bootstrap.min.css"> -->
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -106,6 +106,15 @@
         <iframe src="/charts/pressure1" frameborder="0"></iframe>
         {% endif %}
     </div>
+    <div id="solar" class="main">
+        <h2>太阳角度：</h2>
+        <p>太阳高度角：{{altitude_angle}}</p>
+        <p>太阳方位角：{{azimuth_angle}}</p>
+        <form action="" method="post" style="text-align: center;">
+            <button>计算角度</button>
+        </form>
+        
+    </div>
 
     <script>
         function displayTime()
@@ -118,5 +127,10 @@
     </script>
 
 </body>
+<script>
+    function daytea()
+    {
 
+    }
+</script>
 </html>
