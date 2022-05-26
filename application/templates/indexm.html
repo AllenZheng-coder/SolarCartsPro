@@ -81,30 +81,19 @@
         <p>IP：{{ip}}</p>
     </div>
     <div class="main" id="weather">
-        <h2>天气情况：{{weather}}</h2>
-        {% if flag == 1%}
-        <p>当前温度：{{temperature}}</p>
+        <h2>天气情况：{{weather["basic"]}}</h2>
+        <p>当前温度：{{weather["temperature"]}}℃</p>
         <iframe src="/charts/temperature" frameborder="0"></iframe>
-        <p>当前湿度：{{humidity}}</p>
+        <p>当前湿度：{{weather["humidity"]}}</p>
         <iframe src="/charts/humidity" frameborder="0"></iframe>
         <p>当前紫外线强度：{{uv}}</p>
         <iframe src="/charts/uv" frameborder="0"></iframe>
         <p>当前降水：{{rain}}</p>
         <iframe src="/charts/rain" frameborder="0"></iframe>
-        <p>当前大气压强：{{pressure}}</p>
+        <p>当前大气压强：{{weather["pressure"]}}</p>
         <iframe src="/charts/pressure" frameborder="0"></iframe>
-        {% else %}
-        <p>当前温度：{{temperature}}</p>
-        <iframe src="/charts/temperature1" frameborder="0"></iframe>
-        <p>当前湿度：{{humidity}}</p>
-        <iframe src="/charts/humidity1" frameborder="0"></iframe>
-        <p>当前紫外线强度：{{uv}}</p>
-        <iframe src="/charts/uv1" frameborder="0"></iframe>
-        <p>当前降水：{{rain}}</p>
-        <iframe src="/charts/rain1" frameborder="0"></iframe>
-        <p>当前大气压强：{{pressure}}</p>
-        <iframe src="/charts/pressure1" frameborder="0"></iframe>
-        {% endif %}
+        <p>当前风速：{{weather["wind_speed"]}}</p>
+        <iframe src="/charts/wind_speed" frameborder="0"></iframe>
     </div>
     <div id="solar" class="main">
         <h2>太阳角度：</h2>

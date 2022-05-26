@@ -9,6 +9,7 @@ import os
 import datetime
 import sys
 import calculate
+import get_weather
 
 # import calculate
 app = Flask(__name__)
@@ -27,10 +28,11 @@ def main():
     else:
         info = {"altitude_angle":"", "azimuth_angle":""}
 
+    weather = get_weather.get_weather_info()
     if session["mobile"]:
-        return render_template("indexm.html", altitude_angle=info["altitude_angle"], azimuth_angle=info["azimuth_angle"])
+        return render_template("indexm.html", altitude_angle=info["altitude_angle"], azimuth_angle=info["azimuth_angle"], weather=weather)
     else:
-        return render_template("indexm.html", altitude_angle=info["altitude_angle"], azimuth_angle=info["azimuth_angle"])
+        return render_template("indexm.html", altitude_angle=info["altitude_angle"], azimuth_angle=info["azimuth_angle"], weather=weather)
 
 @app.route("/charts/<content>")
 def shows(content):
@@ -51,6 +53,8 @@ def login():
             return redirect("/")
     else:
         return render_template("login.html",  reminder="欢迎登录")
+
+# @app.route("/settings", met)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port="8080")
