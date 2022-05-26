@@ -1,53 +1,139 @@
-// 端口定义：
-#define analogPin A0
-#define digitalPin 2  
+ // 温度传感器代码如下
 
-void setup() {
-    Serial.begin(9600);
-    pinMode(analogPin,INPUT);
-    pinMode(digitalPin,OUTPUT);
-}
-
-void D2A(int analogPin)
+double Fahrenheit(double celsius)
 {
-    data = analogRead(analogPin);
-    bool data_bin[10];
-    for (int i = 0;i < 10;i++){
-        data_bin[i] = (data % 2);
-        data /= 2;
-    }
-    for(int i = 9;i >= 0;i--){
-        Serial.print(data_bin[i]);
-    }
-    
-    for(int i = 0; i < 10; ++i){
-        if(data_bin[i])
-            digitalWrite(i+2, HIGH);
-        else
-            digitalWrite(i+2, LOW);
-        delay(2000)
-    }
+return 1.8 * celsius + 32;
+}    //摄氏温度度转化为华氏温度
+ 
+double Kelvin(double celsius)
+{
+return celsius + 273.15;
+}     //摄氏温度转化为开氏温度
+ 
+// 露点（点在此温度时，空气饱和并产生露珠）
+// 参考: http://wahiduddin.net/calc/density_algorithms.htm
+double dewPoint(double celsius, double humidity)
+{
+double A0= 373.15/(273.15 + celsius);
+double SUM = -7.90298 * (A0-1);
+SUM += 5.02808 * log10(A0);
+SUM += -1.3816e-7 * (pow(10, (11.344*(1-1/A0)))-1) ;
+SUM += 8.1328e-3 * (pow(10,(-3.49149*(A0-1)))-1) ;
+SUM += log10(1013.246);
+double VP = pow(10, SUM-3) * humidity;
+double T = log(VP/0.61078);   // temp var
+return (241.88 * T) / (17.558-T);
+}
+ 
+// 快速计算露点，速度是5倍dewPoint()
+// 参考: http://en.wikipedia.org/wiki/Dew_point
+double dewPointFast(double celsius, double humidity)
+{
+double a = 17.271;
+double b = 237.7;
+double temp = (a * celsius) / (b + celsius) + log(humidity/100);
+double Td = (b * temp) / (a - temp);
+return Td;
+}
+ 
+#include <dht11.h>//程序中调用了dht11的库
+ 
+dht11 DHT11;//定义一个名字叫做DHT11，类型为dht11的值。
+ 
+#define DHT11PIN 2//定义DHT11的引脚号为D2。
+ 
+void setup()
+{
+Serial.begin(9600);
+Serial.println("DHT11 TEST PROGRAM ");
+Serial.print("LIBRARY VERSION: ");
+Serial.println(DHT11LIB_VERSION);
+Serial.println();
+}
+ 
+void loop()
+{
+Serial.println("\n");
+ 
+int chk = DHT11.read(DHT11PIN);
+ 
+Serial.print("Read sensor: ");
+switch (chk)
+{
+case DHTLIB_OK:
+Serial.println("OK");
+break;
+case DHTLIB_ERROR_CHECKSUM:
+Serial.println("Checksum error");
+break;
+case DHTLIB_ERROR_TIMEOUT:
+Serial.println("Time out error");
+break;
+default:
+Serial.println("Unknown error");
+break;
+}
+ 
+Serial.print("Humidity (%): ");
+Serial.println((float)DHT11.humidity, 2);
+ 
+Serial.print("Temperature (oC): ");
+Serial.println((float)DHT11.temperature, 2);
+ 
+Serial.print("Temperature (oF): ");
+Serial.println(Fahrenheit(DHT11.temperature), 2);
+ 
+Serial.print("Temperature (K): ");
+Serial.println(Kelvin(DHT11.temperature), 2);
+ 
+Serial.print("Dew Point (oC): ");
+Serial.println(dewPoint(DHT11.temperature, DHT11.humidity));
+ 
+Serial.print("Dew PointFast (oC): ");
+Serial.println(dewPointFast(DHT11.temperature, DHT11.humidity));
+ 
+delay(2000);
 }
 
-void loop() {
-  int data = 265;
-  Serial.println(data);
-  bool data_bin[10];
-  for (int i = 0;i < 10;i++){
-    data_bin[i] = (data % 2);
-    data /= 2;
-  }
-  for(int i = 9;i >= 0;i--){
-    Serial.print(data_bin[i]);
-  }
+
+//大气压传感器代码如下：
+#include <Wire.h>
+#include <SPI.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BMP280.h>
+
+#define BMP_SCK 13
+#define BMP_MISO 12
+#define BMP_MOSI 11 
+#define BMP_CS 10
+
+Adafruit_BMP280 bme; // I2C
+//Adafruit_BMP280 bme(BMP_CS); // hardware SPI
+//Adafruit_BMP280 bme(BMP_CS, BMP_MOSI, BMP_MISO,  BMP_SCK);
   
-  for(int i = 0; i < 10; ++i){
-    if(data_bin[i])
-      digitalWrite(digitalPin, HIGH);
-    else
-      digitalWrite(digitalPin, LOW);
-    
-    Serial.delay(0.1)
+void setup() {
+  Serial.begin(9600);
+  Serial.println(F("BMP280 test"));
+  
+  if (!bme.begin()) {  
+    Serial.println("Could not find a valid BMP280 sensor, check wiring!");
+    while (1);
   }
-  Serial.print("\n");
+}
+  
+void loop() {
+    Serial.print("Temperature = ");
+    Serial.print(bme.readTemperature());
+    Serial.println(" *C");
+    
+    Serial.print("Pressure = ");
+    Serial.print(bme.readPressure());
+    Serial.println(" Pa");
+
+   // Serial.print("Approx altitude = ");
+   // Serial.print(bme.readAltitude(1013.25)); // this should be adjusted to your local forcase
+   // Serial.println(" m");
+    
+    Serial.println();
+    delay(2000);
 }
