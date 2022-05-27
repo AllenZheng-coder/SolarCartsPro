@@ -7,7 +7,7 @@ def get_weather():
     txt = response.text
     print(gi.get_position())
     with open('./html.txt','w',encoding='utf-8') as f:
-        f.write(txt)
+        f.write(txt)    
     temperature = r.search(r'"degree":"(.*)","humidity"',txt).group(1)
     humidity = r.search(r'"humidity":"(.*)","precipitation"',txt).group(1)
     pressure = r.search(r'"pressure":"(.*)","update_time"',txt).group(1)
