@@ -1,0 +1,9 @@
+# Python binaries 
+*.pyc
+
+# Output of Sphinx documentation generator
+doc/_build
+
+# Output from setuptools
+/build/
+/pysolar.egg-info/
