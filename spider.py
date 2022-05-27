@@ -10,8 +10,10 @@ def get_weather():
     humidity = r.search(r'"humidity":"(.*)","precipitation"',txt).group(1)
     pressure = r.search(r'"pressure":"(.*)","update_time"',txt).group(1)
     wind = r.search(r'"wind_power":"(.*)"}}',txt).group(1)
-    return_dic = {"temperature":temperature,"humidity":humidity,"pressure":pressure,"wind":wind}
+    weather = r.search(r'"weather":"(.*)","weather_code"',txt).group(1)
+    return_dic = {"temperature":temperature,"humidity":humidity,"pressure":pressure,"wind":wind,"weather":weather}
+    response = req.get("https://devapi.qweather.com/v7/warning/now?f1707f8e841e45eab98716e992e3c3e4")
     return return_dic
 
-# if(__name__ == "__main__"):
-#     print(get_weather())
+if(__name__ == "__main__"):
+    print(get_weather())
