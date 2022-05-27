@@ -1,37 +1,42 @@
-This is Duan-JunHan's branch
+# **SolarCartsPro**
+This is the project for the GoGreen competition
 
-# Now the branch includes:
+Now this respository has a mirror on [github](https://github.com/zhengrui20080218/SolarCartsPro/)
 
-## 1.**Sun_position.py**
+## Newest Revise
+[![郑睿20080218/Solar Carts Pro](https://gitee.com/zheng-rui-20080218/SolarCartsPro/widgets/widget_card.svg?colors=eae9d7,2e2f29,272822,484a45,eae9d7,747571)](https://gitee.com/zheng-rui-20080218/SolarCartsPro)
 
-A module to calculate sun's altitude_angle and azimuth_angle
-  
-It uses a package - [Pysolar](https://github.com/pingswept/pysolar/)
+## Now this project includes:
 
-## 2.**pysolar**
+### **Branch:** Duan-JunHan
 
-You can input these command in the cmd to install this package
+├─ Pysolar-master (A package)
 
-    cd pysolar
+├─ Sun_position.py (A module to calculate sun's position)
+
+├─ Hardware_module (A folder for hardware-control-module)
+
+├─ Sun_position.ggb (A 3D model to help people understand how to describle sun's position)
+
+└─ README.md
+
+### **Branch:** Master
+
+├─ README.md
+
+├─ LICENSE  (Open-Source license)
+
+├─ Material 
+
+├─ Video  
+
+│&emsp;&emsp;├─ Picture  
     
-    python setup.py install
+│&emsp;&emsp;└─ Document  
 
-You **must** install this to make this module run perfectly
+└─ Note
 
-## 3.Hardware_module/read_temperture_humidity_data.py
+&emsp;&emsp;└─ Image    
 
-A module to get DHT11's data
-
-* This module is **unverify** on raspberry
-
-## 4.Hardware_module/servo_control.py
-
-A module to control servo TD7015MG
-
-* This module is **unverify** on raspberry
-
-## 5.Sun_position.ggb
-
-This is a 3D model to help people understand how to describle sun's position
-
-You can open this file on [Geogebra 3D calculater](https://www.geogebra.org/3d) or click this [link](https://www.geogebra.org/3d/ftnemdzx)
+### **Branch:** Zheng-Rui:
+Nothing
