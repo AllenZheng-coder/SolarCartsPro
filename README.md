@@ -16,6 +16,8 @@ Now this respository has a mirror on [github](https://github.com/zhengrui2008021
 
 ├─ Hardware_module (A folder for hardware-control-module)
 
+├─ Sun_position.ggb (A 3D model to help people understand how to describle sun's position)
+
 └─ README.md
 
 ### **Branch:** Master
@@ -35,3 +37,6 @@ Now this respository has a mirror on [github](https://github.com/zhengrui2008021
 └─ Note
 
 &emsp;&emsp;└─ Image    
+
+### **Branch:** Zheng-Rui:
+Nothing
