@@ -51,9 +51,9 @@
                 </td>
                 <td class="blocks"></td>
                 <td class="buttons">
-                    <form action="/history">
+                    <form action="/download">
                         <button class="button"
-                            style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">历史数据</button>
+                            style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); font-size: 15;">历史数据下载</button>
                     </form>
                 </td>
                 <td class="blocks"></td>
@@ -81,26 +81,20 @@
         <p>IP：{{ip}}</p>
     </div>
     <div class="main" id="weather">
-        <h2>天气情况：{{weather["basic"]}}</h2>
+        <h2>天气情况：{{weather["weather"]}}</h2>
         <p>当前温度：{{weather["temperature"]}}℃</p>
-        <iframe src="/charts/temperature" frameborder="0"></iframe>
-        <p>当前湿度：{{weather["humidity"]}}</p>
-        <iframe src="/charts/humidity" frameborder="0"></iframe>
-        <p>当前紫外线强度：{{uv}}</p>
-        <iframe src="/charts/uv" frameborder="0"></iframe>
-        <p>当前降水：{{rain}}</p>
-        <iframe src="/charts/rain" frameborder="0"></iframe>
-        <p>当前大气压强：{{weather["pressure"]}}</p>
-        <iframe src="/charts/pressure" frameborder="0"></iframe>
-        <p>当前风速：{{weather["wind_speed"]}}</p>
-        <iframe src="/charts/wind_speed" frameborder="0"></iframe>
+        <p>当前湿度：{{weather["humidity"]}}%</p>
+        <p>当前大气压强：{{weather["pressure"]}}hPa</p>
+        <p>当前风力：{{weather["wind"]}}级</p>
+        <p>天气预警：{{weather["warning"]}}</p>
     </div>
     <div id="solar" class="main">
         <h2>太阳角度：</h2>
         <p>太阳高度角：{{altitude_angle}}</p>
         <p>太阳方位角：{{azimuth_angle}}</p>
+        <p>手摇圈数：{{round}}</p>
         <form action="" method="post" style="text-align: center;">
-            <button>计算角度</button>
+            <button>计算</button>
         </form>
         
     </div>
