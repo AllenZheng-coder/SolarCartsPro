@@ -12,3 +12,23 @@ This project is prepared for the GoGreen competition. It can drive a 120W solar 
 This facility is mainly used in schools. The Raspberry Pi it brings can create a server in the campus LAN. Students can log in to the server and see the current weather conditions on the website.
 
 Unlike other solar devices, this facility's solar panels can be automatically or manually aligned with the sun to achieve maximum working efficiency throughout the day, and the batteries it carries allow the facility to work day and night.
+
+## Thanks
+
+**School Support**: Baoding No. 17 Middle School
+
+**Commander**: Zheng Rui
+
+**Front-end architecture**: Zheng Rui
+
+**Hardware technology**: Zheng Rui Duan Junhan
+
+**Video production**: Jin Jiayuan Tian Yuxuan
+
+**Technical Support**: Bi Chenjin Wang Yunbo Jiao Quanrui Feng Zixuan
+
+**Instructor**: Chen Xuelou, Yang Xiao
+
+**Thanks to the above students and teachers for their contributions in this project**
+
+(names not listed in order)
