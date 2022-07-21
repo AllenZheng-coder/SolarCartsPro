@@ -4,6 +4,9 @@
 
 它在[gtihub](https://github.com/zhengrui20080218/SolarCartsPro/)上有一个镜像
 
+## 通知：
+比赛结束，本项目已经完结。但由于时间的问题，我们并没有完成介绍中所说的全部功能，即使代码已经就绪。由于时间紧张，在未来的一段时间内我们不会再次对其进行开发，但这不代表我们要放弃这个项目。在未来的1-2年内，我们将抽时间滚动开发，尽可能完成我们的成果，感谢大家的理解与配合
+
 ## 最新修改
 
 ![[](https://gitee.com/zheng-rui-20080218/SolarCartsPro)](https://gitee.com/zheng-rui-20080218/SolarCartsPro/widgets/widget_card.svg?colors=eae9d7,2e2f29,272822,484a45,eae9d7,747571)
