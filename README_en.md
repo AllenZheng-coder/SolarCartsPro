@@ -3,6 +3,9 @@ This is the project for the GoGreen competition
 
 Now this respository has a mirror on [github](https://github.com/zhengrui20080218/SolarCartsPro/)
 
+## Significant Notice
+As the game was over, the project had been stopped from further developing. Because of the limited time, we didn't realize all of the function in our introduction, and we might have no time to keep develpoing in a long time. But that doesn't say that we're going to give up on this project. In the 1-2 years, this project will probably be finished. Thanks for your fork!
+
 ## Newest Revise
 [![郑睿20080218/Solar Carts Pro](https://gitee.com/zheng-rui-20080218/SolarCartsPro/widgets/widget_card.svg?colors=eae9d7,2e2f29,272822,484a45,eae9d7,747571)](https://gitee.com/zheng-rui-20080218/SolarCartsPro)
 
